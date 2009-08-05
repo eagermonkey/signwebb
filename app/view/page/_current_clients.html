@@ -1,0 +1,9 @@
+<div class='secondary_content clients' id="clients">
+  <h2 class='clients'>Current Clients</h2>  
+  <?
+  $model = new WildfireFile("available");
+  ?>
+  <?foreach($model->filter("rpath", "%".CLIENTS_FOLDER."%", "LIKE")->limit(4)->order('id DESC')->all() as $file):?>
+  <img src="<?=$file->permalink(120)?>" alt="client logo" class='client_logo'/>
+  <?endforeach?>
+</div>

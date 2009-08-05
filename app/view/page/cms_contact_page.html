@@ -1,0 +1,46 @@
+<div id="page_body" class='row clearfix'>
+  <div class='header clearfix' id="header">
+    
+    <div class='secondary_content quick_contact' id="contact_details">
+      <h3>Quick Contact</h3>
+      <ul id="contact_details_information">
+        <li class='email'><a href='mailto:sales@signwebb.com'>sales@signwebb.com</a></li>
+        <li class='mobile'>+44 (0)7921 569 186</li>
+        <li class='phone'>+44 (0)121 000 0000</li>
+      </ul>
+    </div>
+    
+    <div class='large_block' id="head-home">
+      <h1 class='contact'>Get In touch</h1>
+      <?=$cms_content->content?>
+    </div>
+    
+  </div>
+
+  <div id="secondary_content" class='finding_us'>
+    <h2>Finding Us</h2>
+    <address>
+      Signwebb Ltd<br />Road Name<br />City<br /><span class='postcode'>B3 1JN</span><br />
+    </address>
+    
+    <div id="googlemap"></div>
+    
+  </div>
+
+  <div id="page_block" class='section-<?=$cms_section->url?> cms_list cms_contact_page'>
+    <h2>Contact Form</h2>
+    
+    <form action="" method="post" id="get_in_touch">
+      <fieldset>
+        <ol>
+          <?foreach($contact_form as $ele):?>
+          <?if($ele->editable):?>
+          <li><?if($ele->required):?><span class='required'>*</span><?endif?><?=$ele->render()?></li>
+          <?endif?>
+          <?endforeach?>
+          <li class='submit'><input type='submit' name='get_in_touch[submit]' value='Send Message'></li>
+        </ol>
+      </fieldset>
+    </form>
+  </div>
+</div>

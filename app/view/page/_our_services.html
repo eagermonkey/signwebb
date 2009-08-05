@@ -1,0 +1,12 @@
+<div id="our_services" class="services clearfix">
+  <h1 class='services'><a href='<?=$section->permalink?>' class='more'>more</a><a href='<?=$section->permalink?>' title='Our Services'>Our Services</a></h1>
+  <?=$items->format_content()?>
+  
+  <?if($services && $services->count()):?>
+  <ul class="special clearfix">
+    <?foreach($services as $service):?>
+    <li><a href="<?=$service->permalink?>"><?=strtoupper(str_replace(" & ", " &amp; ", $service->title))?></a></li>
+    <?endforeach?>
+  </ul>
+  <?endif?>
+</div>

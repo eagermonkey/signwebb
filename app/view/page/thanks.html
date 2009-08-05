@@ -1,0 +1,20 @@
+
+<div id="page_body" class='row clearfix'>
+  
+
+
+  <div id="secondary_content">
+    <?
+    $section_id = PROJECTS_SECTION;  
+    $this->section = new CmsSection($section_id);
+    $model = new CmsContent("published");
+    $this->items = $model->filter("cms_section_id", $section_id)->filter('id', $cms_content->primval, "!=")->limit(10)->all();
+    ?>
+    <?=partial("page/_current_projects", $this)?>
+  </div>
+
+  <div id="page_block" class='section-<?=$cms_section->url?> cms_page'>
+    <h1>Thanks!</h1>
+    <p>We've got your contact request and will get back to you soon!</p>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div id="<?=$section->url?>" class="our-strategy clearfix">
+  <h2 class='<?=$section->url?>'><a href='<?=$section->permalink?>' class='more'>more</a><a href='<?=$section->permalink?>' title='Our Stragey'>Our Strategy</a></h2>
+  <?foreach($items as $content):?>
+  <div class='strategy holder clearfix'>
+    <?if($content->images && $content->images->count()):?>
+    <div class='image_holder' id="image_holder_<?=$content->primval?>">
+      <a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'>&nbsp;</a>
+      <script type="text/javascript">
+      $('#image_holder_<?=$content->primval?>').css('background', 'url(/<?=$content->images[0]->rpath?>/<?=$content->images[0]->filename?>) no-repeat center center');
+      </script>
+    </div>
+    <?endif?>
+    <h3><a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'><?=str_replace(" & ", " &amp; ",$content->title)?></a></h3>
+    <?=word_truncation($content->content, 6)?>
+    <p class='read_more'><a href='<?=$content->permalink?>' title='Read more about <?=str_replace(" & ", " &amp; ",$content->title)?>'>Find out more</a></p>
+  </div>
+  <?endforeach?>
+</div>

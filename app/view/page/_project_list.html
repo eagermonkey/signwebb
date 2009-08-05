@@ -1,0 +1,8 @@
+<div id="project_listing">
+  <h4><a href="/projects" title='projects'>Projects</a></h4>
+  <ul>
+    <?foreach($items as $content):?>
+    <li><a href='<?=$content->permalink?>' title='<?=$content->title?>'><?=$content->title?></a></li>
+    <?endforeach?>
+  </ul>
+</div>

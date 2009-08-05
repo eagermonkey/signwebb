@@ -1,0 +1,17 @@
+<div id="<?=$section->url?>" class="testimonials clearfix">
+  <h2 class='<?=$section->url?>'><a href='<?=$section->permalink?>' class='more'>more</a><a href='<?=$section->permalink?>' title='Testimonials'>Testimonials</a></h2>
+  <?foreach($items as $content):?>
+  <div class='project holder clearfix'>
+    <?if($content->images && $content->images->count()):?>
+    <div class='image_holder' id="image_holder_<?=$content->primval?>">
+      <script type="text/javascript">
+      $('#image_holder_<?=$content->primval?>').css('background', 'url(/show_image/<?=$content->images[0]->primval?>/250.gif) no-repeat center center');
+      </script>
+    </div>
+    <?endif?>
+    <h3><a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'><?=str_replace(" & ", " &amp; ",$content->title)?></a></h3>
+    <?=word_truncation($content->content, 15)?>
+    <p class='read_more'><a href='<?=$content->permalink?>' title='Read more about <?=str_replace(" & ", " &amp; ",$content->title)?>'>Read More</a></p>
+  </div>
+  <?endforeach?>
+</div>

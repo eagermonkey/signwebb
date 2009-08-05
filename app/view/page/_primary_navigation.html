@@ -1,0 +1,6 @@
+<ul id="navigation" class='clearfix'>
+<?=smart_nav("/", "HOME", str_replace("index","", $action), "selected", array('accesskey'=>"A", 'title'=>"Home", 'rel'=>"section", 'class'=>"home"))?>
+<?=smart_nav("/projects", "PROJECTS", ltrim($primary_section->permalink,"/"), "selected", array('accesskey'=>"P", 'title'=>"Projects", 'rel'=>"section", 'class'=>"projects"))?>
+<?=smart_nav("/our-services", "SERVICES", ltrim($primary_section->permalink,"/"), "selected", array('accesskey'=>"S", 'title'=>"Services", 'rel'=>"section", 'class'=>"services"))?>            
+<?=smart_nav("/contact", "CONTACT", ltrim($cms_content->permalink,"/"), "selected", array('accesskey'=>"C", 'title'=>"Contact", 'rel'=>"section", 'class'=>"contact"))?>
+</ul>

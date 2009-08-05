@@ -1,0 +1,34 @@
+<div id="page_body" class='row clearfix'>
+  <div class='header clearfix' id="header">
+    <?=partial("page/_current_clients", $this)?>
+    <?=partial("page/_about_and_strategy", $this)?>
+  </div>
+
+  <div id="secondary_content">
+    <?=partial("page/_testimonials")?>
+  </div>
+
+  <div id="page_block" class='section-<?=$cms_section->url?> cms_list'>
+    <h1 class='<?=$cms_section->url?>'><?=str_replace(" & ", " &amp; ",$cms_section->title)?></h1>
+  
+    <?foreach($cms_content->filter("id", $cms_section->default_page_id, "!=")->all() as $k=>$content):?>
+    <div class='list_item item<?if(fmod($k+1,4)==0):?> last<?endif?> clearfix'>
+      <div class='image_holder' id="image_holder_<?=$content->primval?>">
+        <a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'>&nbsp;</a>
+        <?if($content->images && $content->images->count()):?>
+
+        <script type="text/javascript">
+        $('#image_holder_<?=$content->primval?>').css('background', 'url(/show_image/<?=$content->images[0]->primval?>/350.gif) no-repeat center center');
+        </script>
+        <?endif?>
+      </div>
+
+      <h3><a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'><?=str_replace(" & ", " &amp; ",$content->title)?></a></h3>
+      <?=word_truncation($content->content, 30)?>
+    </div>
+    <?endforeach?>
+  
+    <?=paginate_links($cms_content, 1)?>
+  
+  </div>
+</div>

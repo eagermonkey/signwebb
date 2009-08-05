@@ -1,0 +1,32 @@
+<?
+if($action == "index"){
+  $model = new WildfireFile("available");
+  $images = $model->filter('rpath', '%'.HOMEPAGE_IMAGES.'%', "LIKE")->order("id DESC")->all();
+}else{
+  $images = $cms_content->images;
+}
+$found = array();
+foreach($images as $img){
+  if(is_readable(PUBLIC_DIR.$img->rpath.'/'.$img->filename)) list($width, $height, $type, $attr) = @getimagesize(PUBLIC_DIR.$img->rpath.'/'.$img->filename);
+	else $width = 0;
+  if($width > CAROUSEL_IMAGE_WIDTH) $found[] = $img;
+}
+?>
+<?if(count($found)):?>
+<div id="scroller">
+	<div id="next">
+		<a href="#" title='next' class='next' rel='scroll_item_1'><span>&raquo;</span></a>
+	</div>
+	<div id="previous">
+		<a href="#" title='previous' class='disabled previous' rel=''><span>&laquo;</span></a>
+	</div>
+	<div id="image_list">	
+	<?foreach($found as $k => $image):?>	<!-- item: <?=$k?> -->
+		<div class='carousel_item' id='scroll_item_<?=$k?>' style="background:url('<?=$image->permalink(810)?>') no-repeat center top;">
+		</div>
+	<?endforeach?>	
+	</div>
+</div>
+<?endif?>
+
+

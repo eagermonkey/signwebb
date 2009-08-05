@@ -1,0 +1,28 @@
+<?if($cms_content->primval && $cms_content->images && $cms_content->images->count() > 0):?>
+  <?=partial("page/_page_carousel", $this)?>
+<?endif?>
+<div id="page_body" class='row clearfix'>
+  
+
+
+  <div id="secondary_content">
+    <?
+    $section_id = PROJECTS_SECTION;
+    if($cms_section->url == "our-services") $section_id = TESTIMONIALS_SECTION;  
+  
+    $this->section = new CmsSection($section_id);
+    $model = new CmsContent("published");
+    $this->items = $model->filter("cms_section_id", $section_id)->filter('id', $cms_content->primval, "!=")->limit(10)->all();
+    ?>
+    <?if($cms_section->url == "our-services"):?>
+    <?=partial("page/_testimonials", $this)?>
+    <?else:?>
+    <?=partial("page/_current_projects", $this)?>
+    <?endif?>
+  </div>
+
+  <div id="page_block" class='section-<?=$cms_section->url?> cms_page'>
+    <h1><?=str_replace(" & ", " &amp; ",$cms_content->title)?></h1>
+    <?=$cms_content->content?>
+  </div>
+</div>

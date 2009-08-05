@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Eager Monkey - Marmoset" />
+	<meta name="keywords" content="Sign Webb,bespoke wayfinding signage, signage, wayfinding, vinyl, conference, fitters, specialist, vehicle wraps,exhibition, <?if($cms_content && $cms_content->primval):?>,<?=keywords($cms_content, "content")?><?endif?><?if($cms_section):?>,<?=keywords($cms_section)?><?endif?>" />
+	<meta name="description" content="Sign Webb - bespoke signage, wayfinding signage, vehicle wraps, exhibition and conference signage<?if($cms_content && $cms_content->primval):?>. <?=description($cms_content, "content")?><?endif?><?if($cms_section):?> .<?=description($cms_section)?><?endif?>" />
+ 
+  <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="all" charset="utf-8" />
+  <!--[if lte IE 7]><link rel="stylesheet" href="/stylesheets/ie.css" type="text/css" media="all" charset="utf-8" /><![endif]-->
+  <!--[if lte IE 6]><link rel="stylesheet" href="/stylesheets/ie6.css" type="text/css" media="all" charset="utf-8" /><![endif]-->
+  
+  
+  <script src='http://www.google.com/jsapi?key=<?=$google_maps_key?>'  type='text/javascript'></script>  	
+  <script type='text/javascript'>                      
+  google.load('jquery', '1.3');
+  google.load("maps", "2");
+  google.load("search", '1');
+  </script>
+  <script src="/javascripts/scroller.js" type="text/javascript" charset="utf-8"></script>  
+  <script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
+  
+	<?
+	if(!$page_title && $cms_section->primval) $page_title = page_title($cms_content, $cms_section, " ", " - ");
+	if($cms_section && $cms_section->default_page_id && $cms_content instanceOf CmsContent && $cms_content->primval == $cms_section->default_page_id){
+	  $page_title = substr($page_title, strlen($cms_content->title." - "));
+  }
+  ?>
+	<title><?=ucwords(strip_tags(str_ireplace("- home", "",$page_title)))?>Sign Webb</title>
+	
+</head>
+
+<body>
+  
+  <div class='row clearfix' id="top">
+    <a href='/' title='Home' accesskey='H'><img src="/images/logo.gif" alt="Sign Webb Logo" id="logo"/></a>
+    <?=partial('page/_primary_navigation', $this)?>
+    <ul id="bullets" class='clearfix'>
+      <li>Design</li><li>Print</li><li class='manufacture'>Manufacture</li><li class='last'>Installation</li>
+    </ul>
+  </div>
+  
+  <div class='row clearfix<?if(($cms_content && $cms_content->primval && $cms_content->images && $cms_content->images->count() < 1) || ($cms_section->primval && !count($cms_content)) ):?> no_gallery<?endif?>' id="webpage">
+    <?=$content_for_layout?>
+  </div>
+  
+  <div id="footer" class='row '>
+    <div class='container clearfix'>
+      <div id="terms">
+        <p class='terms'><a href='/terms-and-conditions'>Terms &amp; Conditions</a></p>
+        <p>&copy; 2009 Sign Webb Limited</p>
+      </div>
+      <a href="/" title='home'><img src="/images/logo.jpg" alt="Sign Webb Logo" id="footer_logo"/></a>
+      <ul id="footer_links">
+        <li><a href='/' title='home'>Home</a></li>
+        <li><a href='/projects' title='Projects'>Projects</a></li>
+        <li><a href='/our-serivces' title='Our Services'>Services</a></li>
+        <li><a href='/contact' title='Contact'>Contact</a></li>                  
+      </ul>
+      <?=partial("page/_project_list")?>
+    </div>
+   
+  </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10049708-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+  
+</body>
+</html>

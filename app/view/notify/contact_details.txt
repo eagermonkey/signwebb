@@ -1,0 +1,15 @@
+Hi!
+
+We've had a contact request....
+
+<?foreach($data as $key=>$value):?>
+
+<?=ucwords(str_replace("_", " ", $key))?>:
+<?=$value?>
+
+<?endforeach?>
+
+
+===============================
+Sign Webb Bot
+===============================

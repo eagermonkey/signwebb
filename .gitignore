@@ -1,0 +1,7 @@
+capfile*
+wax*
+tmp*
+._*
+plugins/*
+.DS_Store*
+public/files*

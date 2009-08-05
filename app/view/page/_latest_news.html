@@ -1,0 +1,17 @@
+<div id="latest_news" class='news'>
+  <h2 class='<?=$section->url?>'><a href='<?=$section->permalink?>' class='more'>more</a><a href='<?=$section->permalink?>' title='Latest News' rel='section' class='<?=$section->url?>'>Latest News</a></h2>
+  <?foreach($items as $content):?>
+  <div class='article holder clearfix'>
+    <h6><?=date("l, jS F Y", strtotime($content->published))?></h6>
+    <h3><a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'><?=str_replace(" & ", " &amp; ",$content->title)?></a></h3>
+    <?if($content->images && $content->images->count()):?>
+    <div class='image_holder' id="image_holder_<?=$content->primval?>">
+      <a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'>&nbsp;</a>
+      <script type="text/javascript">
+      $('#image_holder_<?=$content->primval?>').css('background', 'url(/show_image/<?=$content->images[0]->primval?>/350.gif) no-repeat center center');
+      </script>
+    </div>
+    <?endif?>
+  </div>
+  <?endforeach?>
+</div>
