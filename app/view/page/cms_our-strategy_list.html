@@ -1,0 +1,37 @@
+<div id="page_body" class='row clearfix'>
+  <div id="secondary_content">
+    <?
+    $this->section = new CmsSection(PROJECTS_SECTION);
+    $model = new CmsContent("published");
+    $this->items = $model->filter("cms_section_id", PROJECTS_SECTION)->filter('id', $cms_content->primval, "!=")->limit(10)->all();
+    ?>
+    <?=partial("page/_current_projects", $this)?>
+  </div>
+
+  <div id="page_block" class='section-<?=$cms_section->url?> cms_list'>
+    <h1><?=str_replace(" & ", " &amp; ",$cms_section->title)?></h1>
+    
+    <?foreach($cms_content as $k=>$content):?>
+    <div class='item<?if(fmod($k+1,4)==0):?> last<?endif?> clearfix'>
+      <div class='image_holder' id="image_holder_<?=$content->primval?>">
+        <a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'>&nbsp;</a>
+        <?if($content->images && $content->images->count()):?>
+
+        <script type="text/javascript">
+        $('#image_holder_<?=$content->primval?>').css('background', 'url(/show_image/<?=$content->images[0]->primval?>/50.gif) no-repeat center center');
+        </script>
+        <?endif?>
+      </div>
+
+      <h3><a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'><?=str_replace(" & ", " &amp; ",$content->title)?></a></h3>
+      
+      <?=word_truncation($content->content, 30)?>
+    <p class='read_more'><a href='<?=$content->permalink?>' title='Read more about <?=$content->title?>'>Read More</a></p>
+    </div>
+    <?if(fmod($k+1,4)==0):?></div><div class='line clearfix'><?endif?>
+    <?endforeach?>
+    
+    <?=paginate_links($cms_content, 1)?>
+    
+  </div>
+</div>
