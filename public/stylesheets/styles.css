@@ -400,6 +400,7 @@ img.client_logo{
   height:100px;
   margin-right:10px;
   float:left;
+  margin-bottom:10px;
 }
   .image_holder a{display:block;height:100px;}
   #secondary_content .image_holder{
