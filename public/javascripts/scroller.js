@@ -65,6 +65,7 @@
 	  pagination_trigger:function(index){
       jQ(H[index].params.pagination).find('a').unbind("click");
       jQ(H[index].params.pagination).find('a').click(function(){
+		if($(this).hasClass('disabled')) return false;
         var outbound = parseInt(this.rel.replace("scroll_item_", ""));
         if(outbound >= 0){
           $.scroller.hide_show(index, outbound);
