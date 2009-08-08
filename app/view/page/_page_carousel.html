@@ -15,7 +15,7 @@ foreach($images as $img){
 <?if(count($found)):?>
 <div id="scroller">
 	<div id="next">
-		<a href="#" title='next' class='next' rel='scroll_item_1'><span>&raquo;</span></a>
+		<a href="#" title='next' class='next<?if(count($found) == 1):?> disabled<?endif?>' rel='scroll_item_1'><span>&raquo;</span></a>
 	</div>
 	<div id="previous">
 		<a href="#" title='previous' class='disabled previous' rel=''><span>&laquo;</span></a>
