@@ -323,7 +323,7 @@ img.client_logo{
     background:white;
   }
   .project_image_holder a{display:block;height:115px;}
-  .section-our-services h3{background:url('/images/arrow-right-gold.gif') no-repeat center right;margin-bottom:20px;}
+  .section-our-services .list_item h3{background:url('/images/arrow-right-gold.gif') no-repeat center right;margin-bottom:20px;}
   .section-our-services h3 a{color:#5d5857;}
   .section-our-services .list_item{margin-bottom:15px;padding-bottom:5px;border-bottom:1px solid #D8CDCB;}
   .cms_list .item{margin-bottom:30px;}
