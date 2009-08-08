@@ -54,7 +54,7 @@ strong, b{font-weight:bold;color:#000;}
 
 a{text-decoration:none;color:#000;}
 li, p{color:#787670;}
-ul, ol, p{margin-bottom:10px;}
+.cms_page h3, ul, ol, p{margin-bottom:10px;}
 p.first_para{font-size:108%;line-height:1.5em;}
 li{position:relative;}
 h1,h2{
