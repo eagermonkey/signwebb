@@ -30,9 +30,7 @@ class PageController extends ApplicationController {
   public function _latest_news(){
     $this->_list(NEWS_SECTION, 10);
   }
-  public function _our_strategy(){
-    
-  }
+  public function _our_strategy(){}
   public function _current_projects(){
     $this->_list(PROJECTS_SECTION, 2);
   }

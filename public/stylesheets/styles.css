@@ -217,6 +217,11 @@ a.more{
   ul.section li.our-team a{background:url('/images/backgrounds/team.jpg') no-repeat center left;}
   ul.section li.permits-documentation a{background:url('/images/backgrounds/docs.jpg') no-repeat center left;}
   #header ul.section li.health-safety a{background:url('/images/backgrounds/hazard.jpg') no-repeat center left;padding-left:55px;}
+	
+	#image_holder_our-team-holder{background:url('/images/backgrounds/grey-team.jpg') no-repeat center center;}
+	#image_holder_h-and-s-holder{background:url('/images/backgrounds/grey-health-and-safety.jpg') no-repeat center center;}
+	#image_holder_permits-documentation{background:url('/images/backgrounds/grey-docs.jpg') no-repeat center center;}		
+	
 /** MAIN **/
 #webpage{
   padding:15px 14px 0 14px;
