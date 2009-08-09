@@ -6,7 +6,7 @@
   <ul class="special clearfix">
     <?foreach($services as $service):?>
     <li>
-			<a href="<?=$service->permalink?>"><?=strtoupper(str_replace(" & ", " &amp; ", $service->title))?></a>
+			<a href="<?=$service->permalink?>"><?=str_replace(" & ", " &amp; ", strtoupper($service->title))?></a>
 			
 			<?
 			$featured = false;
@@ -21,7 +21,7 @@
 			?>
 			<?if($featured):?>
 			<div class='image_holder'>
-				<img src="<?=$featured->permalink(120)?>" alt="<?=strtoupper(str_replace(" & ", " &amp; ", $service->title))?>" />
+				<img src="<?=$featured->permalink(120)?>" alt="<?=str_replace(" & ", " &amp; ", strtoupper($service->title))?>" />
 			</div>
 			<?endif?>
 		</li>
