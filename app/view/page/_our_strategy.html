@@ -1,18 +1,39 @@
-<div id="<?=$section->url?>" class="our-strategy clearfix">
-  <h2 class='<?=$section->url?>'><a href='<?=$section->permalink?>' class='more'>more</a><a href='<?=$section->permalink?>' title='Our Stragey'>Our Strategy</a></h2>
-  <?foreach($items as $content):?>
-  <div class='strategy holder clearfix'>
-    <?if($content->images && $content->images->count()):?>
-    <div class='image_holder' id="image_holder_<?=$content->primval?>">
-      <a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'>&nbsp;</a>
-      <script type="text/javascript">
-      $('#image_holder_<?=$content->primval?>').css('background', 'url(/<?=$content->images[0]->rpath?>/<?=$content->images[0]->filename?>) no-repeat center center');
-      </script>
-    </div>
-    <?endif?>
-    <h3><a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'><?=str_replace(" & ", " &amp; ",$content->title)?></a></h3>
-    <?=word_truncation($content->content, 6)?>
-    <p class='read_more'><a href='<?=$content->permalink?>' title='Read more about <?=str_replace(" & ", " &amp; ",$content->title)?>'>Find out more</a></p>
-  </div>
-  <?endforeach?>
+<div id="our-strategy" class="our-strategy clearfix">
+  <h2 class='/our-strategy'><a href='/our-strategy' class='more'>more</a><a href='/our-strategy' title='Our Stragey'>Our Strategy</a></h2>
+
+	<div class='strategy holder clearfix'>
+
+		<div class='image_holder' id="image_holder_our-team-holder">
+			<a href='/our-strategy#our-team-section' title='Our Strategy - Our Team'>&nbsp;</a>
+		
+		</div>
+		<h3><a href='/our-strategy#our-team-section' title='Our Team'>Our Team</a></h3>
+
+		<p class='read_more'><a href='/our-strategy#our-team-section' title='Our Team'>Find out more</a></p>
+	</div>
+
+
+	<div class='strategy holder clearfix'>
+
+		<div class='image_holder' id="image_holder_h-and-s-holder">
+			<a href='/our-strategy#health-and-safety-section' title='Our Strategy - Health and Safety'>&nbsp;</a>
+		
+		</div>
+		<h3><a href='/our-strategy#health-and-safety-section' title='Health and Safety'>Health &amp; Safety</a></h3>
+
+		<p class='read_more'><a href='/our-strategy#health-and-safety-section' title='Health and Safety'>Find out more</a></p>
+	</div>
+	
+	
+	<div class='strategy holder clearfix'>
+
+		<div class='image_holder' id="image_holder_permits-documentation">
+			<a href='/our-strategy#permits-section' title='Our Strategy - Permits and Documentation'>&nbsp;</a>
+		
+		</div>
+		<h3><a href='/our-strategy#permits-section' title='Permits and Documentation'>Permits &amp; Documentation</a></h3>
+
+		<p class='read_more'><a href='/our-strategy#permits-section' title='Permits and Documentation'>Find out more</a></p>
+	</div>
+
 </div>
