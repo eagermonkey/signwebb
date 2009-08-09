@@ -31,7 +31,7 @@ class PageController extends ApplicationController {
     $this->_list(NEWS_SECTION, 10);
   }
   public function _our_strategy(){
-    $this->_list(OUR_STRATEGY_SECTION, 3);
+    
   }
   public function _current_projects(){
     $this->_list(PROJECTS_SECTION, 2);
