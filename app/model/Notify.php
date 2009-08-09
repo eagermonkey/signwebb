@@ -1,9 +1,9 @@
 <?
 class Notify extends WXEmail{
   
-  public $from = "info@signwebb.co.uk"; 
+  public $from = "sales@signwebb.co.uk"; 
 	public $from_name = "SignWebb"; 
-	public $contact_to = "contact@signwebb.co.uk"; 
+	public $contact_to = "sales@signwebb.co.uk"; 
 	public $dev_address = "marmoset@eagermonkey.com";
 	
 	public function contact_details($data){
