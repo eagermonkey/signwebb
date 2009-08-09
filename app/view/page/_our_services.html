@@ -5,7 +5,26 @@
   <?if($services && $services->count()):?>
   <ul class="special clearfix">
     <?foreach($services as $service):?>
-    <li><a href="<?=$service->permalink?>"><?=strtoupper(str_replace(" & ", " &amp; ", $service->title))?></a></li>
+    <li>
+			<a href="<?=$service->permalink?>"><?=strtoupper(str_replace(" & ", " &amp; ", $service->title))?></a>
+			
+			<?
+			$featured = false;
+			if($service->images && $service->images->count()){
+				foreach($service->images as $img){
+					$path = PUBLIC_DIR.$img->rpath.'/'.$img->filename;
+					if(is_readable($path)) list($width, $height, $type, $attr) = @getimagesize($path);
+					else $width = 900;
+					if($width < CAROUSEL_IMAGE_WIDTH) $featured = $img;
+				}				
+			}
+			?>
+			<?if($featured):?>
+			<div class='image_holder'>
+				<img src="<?=$featured->permalink(120)?>" alt="<?=strtoupper(str_replace(" & ", " &amp; ", $service->title))?>" />
+			</div>
+			<?endif?>
+		</li>
     <?endforeach?>
   </ul>
   <?endif?>

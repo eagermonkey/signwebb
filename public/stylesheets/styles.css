@@ -261,16 +261,26 @@ img.client_logo{
     float:left;
     display:block;
     font-weight:bold;
-    padding:3px;
     color:white;
     height:100px;
     width:18%;
     margin-right:0.7%;
     font-size:85%;
     margin-left:0;
-    background:#f4b928 url('/images/dhl.jpg') no-repeat bottom center;
+    background:#f4b928;
   }
-  #our_services .special li a{color:white;display:block;}
+		#our_services .special li .image_holder{
+			width:98px;
+			height:60px;
+			border:2px solid #f6d041;
+			overflow:hidden;
+		}
+		#our_services .special li .image_holder img{display:block;margin:auto;}
+  #our_services .special li a{
+		color:white;
+		display:block;
+    padding:3px;
+	}
   #our-strategy{
     float:right;
     width:48%;
