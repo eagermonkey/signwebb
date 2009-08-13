@@ -4,4 +4,5 @@ tmp*
 ._*
 plugins/*
 .DS_Store*
+config.yml
 public/files*
