@@ -14,12 +14,14 @@ foreach($images as $img){
 ?>
 <?if(count($found)):?>
 <div id="scroller">
+	<?if(count($found) > 1):?>
 	<div id="next">
 		<a href="#" title='next' class='next<?if(count($found) == 1):?> disabled<?endif?>' rel='scroll_item_1'><span>&raquo;</span></a>
 	</div>
 	<div id="previous">
 		<a href="#" title='previous' class='disabled previous' rel=''><span>&laquo;</span></a>
 	</div>
+	<?endif?>
 	<div id="image_list">	
 	<?foreach($found as $k => $image):?>	<!-- item: <?=$k?> -->
 		<div class='carousel_item' id='scroll_item_<?=$k?>' style="background:url('<?=$image->permalink(810)?>') no-repeat center top;">
