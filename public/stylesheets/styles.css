@@ -75,7 +75,7 @@ h6{color:#787670;font-size:85%;}
 
 /** colours for sections **/
 h1.projects, h1.services, h2.services, h3.services, h1.services a, h2.services a, 
-h3.services a, #header .large_block h1.contact, #contact_details h3{color:#fcc300;}
+h3.services a, #header .large_block h1.contact, #contact_details h3{color:red;}
 div.services, div.quick_contact{border-top:8px solid #FCC300;padding:10px 0;}
 div.quick_contact{padding-top:0;}
 
