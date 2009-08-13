@@ -417,6 +417,7 @@ img.client_logo{
   float:left;
   margin-bottom:10px;
 }
+.section-our-services .list_item .image_holder{border:2px solid #FCC300;}
   .image_holder a{display:block;height:100px;}
   #secondary_content .image_holder{
     width:55px;
