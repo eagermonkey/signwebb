@@ -16,11 +16,19 @@
       <div class='image_holder' id="image_holder_<?=$content->primval?>">
         <a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'>&nbsp;</a>
         <?if($content->images && $content->images->count()):?>
-
-        <script type="text/javascript">
-        $('#image_holder_<?=$content->primval?>').css('background', 'url(/show_image/<?=$content->images[0]->primval?>/350.gif) no-repeat center center');
-        </script>
-        <?endif?>
+					<?$featured = false;?>
+					<?
+					foreach($content->images as $img){
+						if(is_readable(PUBLIC_DIR.$img->rpath.'/'.$img->filename)) list($width, $height, $type, $attr) = @getimagesize(PUBLIC_DIR.$img->rpath.'/'.$img->filename);
+						else $width = 0;
+	  				if($width > CAROUSEL_IMAGE_WIDTH) $featured = $img;
+					}
+					?>
+					<?if($featured):?>
+	        <script type="text/javascript">
+	        $('#image_holder_<?=$content->primval?>').css('background', 'url(/show_image/<?=$featured->primval?>/350.gif) no-repeat center center');
+	        </script>
+					<?endif?>
       </div>
 
       <h3><a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'><?=str_replace(" & ", " &amp; ",$content->title)?></a></h3>
