@@ -2,7 +2,7 @@
   <h4><a href="/projects" title='projects'>Projects</a></h4>
   <ul>
     <?foreach($items as $content):?>
-    <li><a href='<?=$content->permalink?>' title='<?=$content->title?>'><?=$content->title?></a></li>
+    <li><a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " and ",$content->title)?>'><?=str_replace(" & ", " &amp; ",$content->title)?></a></li>
     <?endforeach?>
   </ul>
 </div>
