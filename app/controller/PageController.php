@@ -44,7 +44,7 @@ class PageController extends ApplicationController {
     $this->section = new CmsSection(SERVICES_SECTION);
     $model = new CmsContent("published");
     $this->items = $this->section->default_page;
-    $this->services = $model->filter("cms_section_id", SERVICES_SECTION)->filter("id", $this->items->primval, "!=")->limit(4)->all();
+    $this->services = $model->filter("cms_section_id", SERVICES_SECTION)->filter("id", $this->items->primval, "!=")->limit(5)->all();
   }
   
   private function _list($section, $limit){
