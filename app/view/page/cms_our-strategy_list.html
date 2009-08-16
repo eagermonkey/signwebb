@@ -3,7 +3,7 @@
     <?
     $this->section = new CmsSection(PROJECTS_SECTION);
     $model = new CmsContent("published");
-    $this->items = $model->filter("cms_section_id", PROJECTS_SECTION)->filter('id', $cms_content->primval, "!=")->limit(10)->all();
+    $this->items = $model->filter("cms_section_id", PROJECTS_SECTION)->filter('id', $cms_content->primval, "!=")->limit(4)->all();
     ?>
     <?=partial("page/_current_projects", $this)?>
   </div>
