@@ -2,7 +2,7 @@
 
 class PageController extends ApplicationController {
   
-  public $per_page = 16;
+  public $per_page = 4;
   
   public function controller_global(){
     $this->cms();
