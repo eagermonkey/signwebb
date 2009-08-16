@@ -38,7 +38,7 @@ class PageController extends ApplicationController {
     $this->_list(TESTIMONIALS_SECTION, 4);
   }
   public function _project_list(){
-    $this->_list(PROJECTS_SECTION, 4);
+    $this->_list(PROJECTS_SECTION, 6);
   }
   public function _our_services(){
     $this->section = new CmsSection(SERVICES_SECTION);
