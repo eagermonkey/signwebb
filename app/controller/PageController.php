@@ -28,23 +28,23 @@ class PageController extends ApplicationController {
   
   /** PARTIALS **/
   public function _latest_news(){
-    $this->_list(NEWS_SECTION, 10);
+    $this->_list(NEWS_SECTION, 4);
   }
   public function _our_strategy(){}
   public function _current_projects(){
     $this->_list(PROJECTS_SECTION, 2);
   }
   public function _testimonials(){
-    $this->_list(TESTIMONIALS_SECTION, 10);
+    $this->_list(TESTIMONIALS_SECTION, 4);
   }
   public function _project_list(){
-    $this->_list(PROJECTS_SECTION, 10);
+    $this->_list(PROJECTS_SECTION, 4);
   }
   public function _our_services(){
     $this->section = new CmsSection(SERVICES_SECTION);
     $model = new CmsContent("published");
     $this->items = $this->section->default_page;
-    $this->services = $model->filter("cms_section_id", SERVICES_SECTION)->filter("id", $this->items->primval, "!=")->limit(5)->all();
+    $this->services = $model->filter("cms_section_id", SERVICES_SECTION)->filter("id", $this->items->primval, "!=")->limit(4)->all();
   }
   
   private function _list($section, $limit){
