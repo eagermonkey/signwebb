@@ -9,19 +9,9 @@
 			<a href="<?=$service->permalink?>"><?=str_replace(" & ", " &amp; ", strtoupper($service->title))?></a>
 			
 			<?
-			$featured = false;
-			if($service->images && $service->images->count()){
-				foreach($service->images as $img){
-					$path = PUBLIC_DIR.$img->rpath.'/'.$img->filename;
-					if(is_readable($path)) list($width, $height, $type, $attr) = @getimagesize($path);
-					else $width = 900;
-					if($width < CAROUSEL_IMAGE_WIDTH) $featured = $img;
-				}				
-			}
-			?>
-			<?if($featured):?>
+			if($service->images && $service->images->count()):?>
 			<div class='image_holder'>
-				<img src="<?=$featured->permalink(120)?>" alt="<?=str_replace(" & ", " &amp; ", strtoupper($service->title))?>" />
+				<img src="<?=$service->images[0]->permalink(120)?>" alt="<?=str_replace(" & ", " &amp; ", strtoupper($service->title))?>" />
 			</div>
 			<?endif?>
 		</li>

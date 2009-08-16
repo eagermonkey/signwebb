@@ -5,6 +5,7 @@ RewriteEngine On
 
 RewriteBase /
 
+RewriteRule ^admin$ /admin/home/login [QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond $1 !-d
