@@ -350,7 +350,7 @@ img.client_logo{
 		background:#1a1a1a;
 		margin-bottom:0 !important;
 	}
-	.section-our-services .list_item p{font-size:85%;}
+	.section-our-services .list_item p{font-size:85%;margin-bottom:5px;}
 	.section-our-services .list_item .image_holder{margin-bottom:0;}
 	.section-our-services .end{margin-right:0 !important;}
   .section-our-services .list_item h3{
