@@ -351,6 +351,7 @@ img.client_logo{
 		margin-bottom:0 !important;
 	}
 	.section-our-services .list_item p{font-size:85%;}
+	.section-our-services .list_item{margin-bottom:0;}
 	.section-our-services .end{margin-right:0 !important;}
   .section-our-services .list_item h3{
 		background:url('/images/arrow-right-gold.gif') no-repeat 95% 8px;
