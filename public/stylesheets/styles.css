@@ -349,6 +349,7 @@ img.client_logo{
 		padding-right:2%;
 		margin-right:6%;
 		background:#1a1a1a;
+		margin-bottom:0 !important;
 	}
 	.section-our-services .list_item p{font-size:85%;}
 	.section-our-services .end{margin-right:0 !important;}
