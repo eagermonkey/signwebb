@@ -345,7 +345,8 @@ img.client_logo{
 	}
 	.section-our-services .list_item{
 		float:left;
-		width:46%;
+		width:44%;
+		padding-right:2%;
 		margin-right:6%;
 		background:#1a1a1a;
 	}
