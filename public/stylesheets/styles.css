@@ -338,9 +338,19 @@ img.client_logo{
     background:white;
   }
   .project_image_holder a{display:block;height:115px;}
+	/*our services list page*/
+	.section-our-services .list_item{
+		float:left;
+		width:46%;
+		margin-right:6%;
+		background:#1a1a1a;
+	}
+	.section-our-services .end{margin-right:0 !important;}
   .section-our-services .list_item h3{background:url('/images/arrow-right-gold.gif') no-repeat center right;margin-bottom:20px;}
-  .section-our-services h3 a{color:#FCC300;}
+	.section-our-services .list_item *{color:white;}
+  .section-our-services h3 a, .section-our-services a{color:#FCC300;}
   .section-our-services .list_item{margin-bottom:15px;padding-bottom:5px;border-bottom:1px solid #D8CDCB;}
+
   .cms_list .item{margin-bottom:30px;}
 /** FOOTER **/
 #footer{background:url('/images/backgrounds/footer.jpg') repeat-y center center;padding-top:6px;}

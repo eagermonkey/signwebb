@@ -11,8 +11,9 @@
   <div id="page_block" class='section-<?=$cms_section->url?> cms_list'>
     <h1 class='<?=$cms_section->url?>'><?=str_replace(" & ", " &amp; ",$cms_section->title)?></h1>
   
+		<div class='service_row clearfix'>
     <?foreach($cms_content->filter("id", $cms_section->default_page_id, "!=")->all() as $k=>$content):?>
-    <div class='list_item item<?if(fmod($k+1,4)==0):?> last<?endif?> clearfix'>
+    <div class='list_item item <?if(fmod($k+1,2)==0):?> end <?endif?>clearfix'>
       <div class='image_holder' id="image_holder_<?=$content->primval?>">
         <a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'>&nbsp;</a>
         <?if($content->images && $content->images->count()):?>
@@ -35,7 +36,10 @@
       <h3><a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'><?=str_replace(" & ", " &amp; ",$content->title)?></a></h3>
       <?=word_truncation($content->content, 30)?>
     </div>
+		<?if(fmod($k+1,2)==0):?></div><div class='service_row clearfix'><?endif?>
+
     <?endforeach?>
+		</div>
   
     <?=paginate_links($cms_content, 1)?>
   
