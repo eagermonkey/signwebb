@@ -34,7 +34,7 @@
       </div>
 
       <h3><a href='<?=$content->permalink?>' title='<?=str_replace(" & ", " &amp; ",$content->title)?>'><?=str_replace(" & ", " &amp; ",$content->title)?></a></h3>
-      <?=word_truncation($content->content, 12)?>
+      <?=word_truncation($content->content, 9)?>
     </div>
 		<?if(fmod($k+1,2)==0):?></div><div class='service_row clearfix'><?endif?>
 
