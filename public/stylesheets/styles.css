@@ -345,8 +345,7 @@ img.client_logo{
 	}
 	.section-our-services .list_item{
 		float:left;
-		width:44%;
-		padding-right:2%;
+		width:46%;
 		margin-right:6%;
 		background:#1a1a1a;
 		margin-bottom:0 !important;
@@ -356,7 +355,7 @@ img.client_logo{
   .section-our-services .list_item h3{
 		background:url('/images/arrow-right-gold.gif') no-repeat 95% 10px;
 		margin-bottom:5px;
-		padding:5px 15px 0 0;
+		padding:5px 3% 0 0;
 	}
 	.section-our-services .list_item *{color:white;}
   .section-our-services h3 a, .section-our-services a{color:#FCC300 !important;}
