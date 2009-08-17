@@ -352,7 +352,7 @@ img.client_logo{
 	.section-our-services .list_item p{font-size:85%;}
 	.section-our-services .end{margin-right:0 !important;}
   .section-our-services .list_item h3{
-		background:url('/images/arrow-right-gold.gif') no-repeat 95% top;
+		background:url('/images/arrow-right-gold.gif') no-repeat 95% 10px;
 		margin-bottom:5px;
 		padding:5px 0;
 	}
