@@ -351,7 +351,7 @@ img.client_logo{
 	}
 	.section-our-services .list_item p{font-size:85%;}
 	.section-our-services .end{margin-right:0 !important;}
-  .section-our-services .list_item h3{background:url('/images/arrow-right-gold.gif') no-repeat center right;margin-bottom:20px;}
+  .section-our-services .list_item h3{background:url('/images/arrow-right-gold.gif') no-repeat center right;margin-bottom:10px;}
 	.section-our-services .list_item *{color:white;}
   .section-our-services h3 a, .section-our-services a{color:#FCC300 !important;}
 
