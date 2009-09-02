@@ -23,7 +23,10 @@ class PageController extends ApplicationController {
 		$this->sections = $section->all();		
 		$content = new CmsContent("published");
 		$this->pages = $content->all();		
-		if($this->use_format == "xml") $this->use_layout = false;
+		if($this->use_format == "xml"){
+			header("Content-type: application/xml");
+			$this->use_layout = false;
+		}
 	}
   
   /** PARTIALS **/
