@@ -20,10 +20,10 @@ Config::set("log_error", true);
 *  If these are set a copy of the error trace will be emailed to the address. 
 */
 
-//WXRoutingException::$redirect_on_error = "/404.html"; // Page not found error
+WXRoutingException::$redirect_on_error = "/404.html"; // Page not found error
 
 // Application Error and an email address and subject to send details to.
-//WaxException::$redirect_on_error = "/error.html";
+WaxException::$redirect_on_error = "/error.html";
 //WaxException::$email_on_error="";
 //WaxException::$email_subject_on_error="";
 /*********************************************************************************************/
